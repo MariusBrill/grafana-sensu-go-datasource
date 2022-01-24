@@ -7,6 +7,6 @@
   },
   "scripts": {
     "afterBump":
-      "npm run build; cp -r dist sensu-sensugo-datasource; mkdir -p releases; zip -r releases/sensu-sensugo-datasource-${version}.zip sensu-sensugo-datasource; rm -r sensu-sensugo-datasource"
+      "rm -r dist; npx @grafana/toolkit plugin:sign; npm run build; cp -r dist sensu-sensugo-datasource; mkdir -p releases; zip -r releases/sensu-sensugo-datasource-${version}.zip sensu-sensugo-datasource; rm -r sensu-sensugo-datasource"
   }
 }
